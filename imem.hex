@@ -1,0 +1,6 @@
+00221820  // add $3, $1, $2  (Assumes $1 and $2 are initialized in testbench)
+ac030004  // sw $3, 4($0)    (Store $3's value into Data Memory at address 4)
+8c040004  // lw $4, 4($0)    (Load from Data Memory address 4 back into $4)
+10640001  // beq $3, $4, 1   (Since $3 == $4, branch +1, skips next instruction)
+00002820  // add $5, $0, $0  (Should be skipped by the branch)
+00642822  // sub $5, $3, $4  (Branch target: $5 gets $3 - $4)
